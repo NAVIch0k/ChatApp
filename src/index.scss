@@ -18,6 +18,10 @@ body {
     radial-gradient(circle at top, rgba(14, 116, 144, 0.2), transparent 55%), #020617;
 }
 
+body.is-dnd {
+  overflow: hidden;
+}
+
 button {
   font-family: inherit;
   border: none;

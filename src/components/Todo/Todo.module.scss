@@ -1,5 +1,5 @@
 .card {
-  @apply space-y-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur;
+  @apply flex h-full flex-col gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur;
 }
 
 .header {
@@ -20,4 +20,8 @@
 
 .statValue {
   @apply text-slate-100;
+}
+
+.listWrapper {
+  @apply min-h-0 flex-1;
 }

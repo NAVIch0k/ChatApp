@@ -1,7 +1,7 @@
 .page {
-  @apply min-h-screen bg-slate-950 text-slate-100;
+  @apply min-h-screen overflow-hidden bg-slate-950 text-slate-100;
 }
 
 .container {
-  @apply mx-auto max-w-3xl px-6 py-14;
+  @apply mx-auto h-screen max-w-3xl px-6 py-10;
 }

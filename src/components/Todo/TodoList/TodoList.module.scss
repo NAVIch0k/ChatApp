@@ -2,8 +2,8 @@
   @apply rounded-2xl border border-dashed border-white/10 p-6 text-center text-slate-400;
 }
 
-.list {
-  @apply flex flex-col gap-3 pb-6 pt-2;
+.scrollArea {
+  @apply flex h-full min-h-0 flex-col gap-3 overflow-y-auto pb-6 pt-2 pr-1;
 }
 
 .overlayCard {

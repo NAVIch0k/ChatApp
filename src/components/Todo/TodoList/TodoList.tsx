@@ -15,7 +15,10 @@ import {
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable'
-import { restrictToParentElement, restrictToVerticalAxis } from '@dnd-kit/modifiers'
+import {
+  restrictToFirstScrollableAncestor,
+  restrictToVerticalAxis,
+} from '@dnd-kit/modifiers'
 import React, { useState } from 'react'
 import { useAppDispatch } from '../../../store/hooks'
 import type { FilterType, Todo } from '../../../store/todosSlice'
@@ -54,13 +57,16 @@ const TodoList: React.FC<TodoListProps> = ({ items, filter }) => {
       )
     }
     setActiveId(null)
+    document.body.classList.remove('is-dnd')
   }
   const handleDragStart = (event: DragStartEvent) => {
     setActiveId(String(event.active.id))
+    document.body.classList.add('is-dnd')
   }
 
   const handleDragCancel = () => {
     setActiveId(null)
+    document.body.classList.remove('is-dnd')
   }
 
   const activeItem = activeId ? items.find((i) => i.id === activeId) : undefined
@@ -73,7 +79,8 @@ const TodoList: React.FC<TodoListProps> = ({ items, filter }) => {
     <DndContext
       sensors={sensors}
       collisionDetection={closestCenter}
-      modifiers={[restrictToVerticalAxis, restrictToParentElement]}
+      modifiers={[restrictToVerticalAxis, restrictToFirstScrollableAncestor]}
+      autoScroll={false}
       measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
@@ -83,7 +90,7 @@ const TodoList: React.FC<TodoListProps> = ({ items, filter }) => {
         items={filtered.map((i) => i.id)}
         strategy={verticalListSortingStrategy}
       >
-        <div className={styles.list}>
+        <div className={styles.scrollArea}>
           {filtered.map((item) => (
             <TodoItem key={item.id} item={item} />
           ))}

@@ -30,7 +30,9 @@ const Todo: React.FC = () => {
       </header>
       <TodoInput />
       <FilterBar />
-      <TodoList items={items} filter={filter} />
+      <div className={styles.listWrapper}>
+        <TodoList items={items} filter={filter} />
+      </div>
     </div>
   )
 }
