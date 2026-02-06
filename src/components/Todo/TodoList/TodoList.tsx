@@ -11,14 +11,14 @@ import {
   useSensors,
 } from '@dnd-kit/core'
 import {
+  restrictToFirstScrollableAncestor,
+  restrictToVerticalAxis,
+} from '@dnd-kit/modifiers'
+import {
   SortableContext,
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable'
-import {
-  restrictToFirstScrollableAncestor,
-  restrictToVerticalAxis,
-} from '@dnd-kit/modifiers'
 import React, { useState } from 'react'
 import { useAppDispatch } from '../../../store/hooks'
 import type { FilterType, Todo } from '../../../store/todosSlice'
