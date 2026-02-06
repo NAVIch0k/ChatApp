@@ -1,0 +1,38 @@
+.empty {
+  @apply rounded-2xl border border-dashed border-white/10 p-6 text-center text-slate-400;
+}
+
+.list {
+  @apply flex flex-col gap-3 pb-6 pt-2;
+}
+
+.overlayCard {
+  @apply flex items-center gap-3 rounded-2xl border border-white/15 bg-slate-900/90 p-4 shadow-xl;
+}
+
+.overlayHandle {
+  @apply flex h-8 w-8 items-center justify-center rounded-xl bg-white/10;
+}
+
+.overlayDots {
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, rgba(226, 232, 240, 0.8) 20%, transparent 20%) 0 0 /
+    4px 4px;
+}
+
+.overlayCheckbox {
+  @apply flex h-7 w-7 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-sm font-bold text-slate-200;
+}
+
+.overlayChecked {
+  @apply border-teal-300 bg-teal-400 text-slate-900;
+}
+
+.overlayTitle {
+  @apply text-base text-slate-100;
+}
+
+.overlayCompleted {
+  @apply text-slate-400 line-through;
+}

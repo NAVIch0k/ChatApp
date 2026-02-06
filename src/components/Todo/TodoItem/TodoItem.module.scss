@@ -1,0 +1,61 @@
+.card {
+  @apply flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/70 p-4 backdrop-blur transition;
+}
+
+.dragging {
+  @apply border-teal-400/60 shadow-xl;
+  opacity: 0;
+  transform: none;
+}
+
+.handle {
+  @apply flex h-8 w-8 items-center justify-center rounded-xl bg-white/10;
+  cursor: grab;
+}
+
+.handleDots {
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, rgba(226, 232, 240, 0.8) 20%, transparent 20%) 0 0 /
+    4px 4px;
+}
+
+.checkbox {
+  @apply flex h-7 w-7 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-sm font-bold text-slate-200 transition hover:border-white/40;
+}
+
+.checked {
+  @apply border-teal-300 bg-teal-400 text-slate-900;
+}
+
+.content {
+  @apply flex-1;
+}
+
+.title {
+  @apply text-left text-base text-slate-200 transition;
+}
+
+.completed {
+  @apply text-slate-400 line-through;
+}
+
+.input {
+  @apply w-full rounded-xl border border-white/20 bg-slate-900/80 px-3 py-2 text-slate-100 outline-none;
+}
+
+.actions {
+  @apply flex items-center gap-2;
+}
+
+.action {
+  @apply rounded-xl bg-white/10 px-3 py-1.5 text-sm text-slate-200 transition hover:bg-white/20;
+}
+
+.delete {
+  @apply rounded-xl bg-red-400/20 px-3 py-1.5 text-sm text-red-200 transition hover:bg-red-400/35;
+}
+
+.srOnly {
+  @apply sr-only;
+}

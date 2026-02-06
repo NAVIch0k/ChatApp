@@ -1,0 +1,7 @@
+.page {
+  @apply min-h-screen bg-slate-950 text-slate-100;
+}
+
+.container {
+  @apply mx-auto max-w-3xl px-6 py-14;
+}
